@@ -14,6 +14,24 @@ $(document).ready(function() {
 	
 });
 
+//$("#dialog").dialog({
+//    autoOpen: false,
+//    resizable: false,
+//    draggable: false,
+//    modal: true,
+//    buttons: {
+//        "Sync": function() {
+//        $( this ).dialog( "close" );
+//        }
+//      },
+//    show: {
+//        duration: 0
+//    },
+//    hide: {
+//		duration: 0
+//    }
+//});
+
 function daysBetweenDates(d1,d2){
 	var diff = d1 - d2;
 //	return diff / (1000 * 60 * 60 * 24);
@@ -29,11 +47,15 @@ function syncPopUp() {
 	var currTime = Date.now();
 
 	var response = popUp();
+//	$("#dialog").dialog("open");
 	if(response){
 		window.location.replace("synchronize.html");
 		iplover.data.autoSyncOn();
 	}
 	return;
+	//DO AFTER 2 days, every 12 hours? 
+	//Ensure that last edited field is pushed to db.
+	//
 //	var numDaySinceLastSync = daysBetweenDates(currTime,entry.last_edited_calculations);
 //	alert(numDaySinceLastSync + " minutes");
 //	if(numDaySinceLastSync > 1){

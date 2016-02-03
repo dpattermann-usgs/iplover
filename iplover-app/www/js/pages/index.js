@@ -14,7 +14,8 @@ function onDeviceReady() {
 
 function onfail(message){
     $("#spinner-img").hide();
-    alert("Please check username and password.");
+//    alert("Please check username and password.");
+	location.href = "home.html"
 };
 
 function onlogin(token, group){
